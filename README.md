@@ -47,6 +47,35 @@ npm install
 npm run dev
 ```
 
+## 🚀 Deployment
+
+To build and preview your site for production:
+
+1. Build the optimized production files:
+```bash
+npm run build
+```
+
+2. Preview the production build locally:
+```bash
+npm run preview
+```
+
+3. Deploy the contents of the `dist` folder to your preferred static hosting provider (e.g., Vercel, Netlify, GitHub Pages).
+
+### Deploying to Vercel
+This project includes a `vercel.json` for proper SPA routing. To deploy:
+- Install the [Vercel CLI](https://vercel.com/docs/cli):
+  ```bash
+  npm i -g vercel
+  ```
+- Run:
+  ```bash
+  vercel
+  ```
+
+For other hosts, ensure all routes serve `index.html` (SPA fallback).
+
 ## 📝 Contact
 
 Feel free to reach out to me if you have any questions or would like to collaborate!

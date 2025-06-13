@@ -6,11 +6,27 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["home", "about", "projects", "contact"];
+      const viewportHeight = window.innerHeight;
+      const scrollPosition = window.scrollY;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      // Check if we're at the bottom of the page
+      const isAtBottom = scrollPosition + viewportHeight >= documentHeight - 50;
+      
+      if (isAtBottom) {
+        setActiveSection("contact");
+        return;
+      }
+
+      // Regular section detection
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top <= 150 && rect.bottom >= 150) {
+          // Make the detection zone larger for shorter sections
+          const detectionThreshold = rect.height < viewportHeight ? rect.height / 2 : viewportHeight / 3;
+          
+          if (rect.top <= detectionThreshold && rect.bottom >= 0) {
             setActiveSection(section);
             break;
           }
@@ -21,6 +37,18 @@ const Navbar: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const createWaveLetters = (text: string) => {
+    return text.split('').map((letter, index) => (
+      <span 
+        key={index} 
+        className={`wave-letter inline-block ${letter === ' ' ? 'mr-1' : ''}`}
+        style={{ animationDelay: `${index * 0.05}s` }}
+      >
+        {letter === '' ? '\u00A0' : letter}
+      </span>
+    ));
+  };
 
   return (
     <nav className="fixed top-16 right-12 z-50">
@@ -35,12 +63,12 @@ const Navbar: React.FC = () => {
             <li key={id} className="text-right">
               <a 
                 href={`#${id}`}
-                className={`text-white font-medium transition-all duration-300 hover:-translate-x-2 inline-block
+                className={`text-white font-medium transition-all duration-300 wave-text inline-block
                   ${activeSection === id 
                     ? 'text-yellow-400 hover:text-yellow-600' 
                     : 'hover:text-yellow-400'}`}
               >
-                {label}
+                {createWaveLetters(label)}
               </a>
             </li>
           ))}
