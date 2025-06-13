@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
-import profileImg from './img/Pantaras-profile.jpeg';
-import projectImg from './img/Pantaras-profile.jpeg';
 
 const Home: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const profileImg = '/img/Pantaras-profile.jpeg';
+  const projectImg = '/img/Pantaras-profile.jpeg';
 
   useEffect(() => {
     setIsLoaded(true);
