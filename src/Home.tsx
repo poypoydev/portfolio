@@ -89,7 +89,7 @@ const Home: React.FC = () => {
                       </svg>
                     </div>
                     <h3 className="text-base md:text-lg text-white font-medium transition-all duration-300 group-hover:text-yellow-400">
-                      Potential Full-Stack Web Developer
+                      Aspiring Full-Stack Web Developer
                     </h3>
                     <div className="h-1 w-12 bg-yellow-400/50 mx-auto mt-3 transition-all duration-300 group-hover:w-24"></div>
                   </div>
