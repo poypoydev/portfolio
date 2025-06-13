@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
+import profileImg from './img/Pantaras-profile.jpeg';
+import projectImg from './img/Pantaras-profile.jpeg';
 
 const Home: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -124,7 +126,7 @@ const Home: React.FC = () => {
                   <Parallax translateY={[-15, 15]} opacity={[0.8, 1]} speed={-3}>
                     <div className="relative rounded-2xl overflow-hidden">
                       <img 
-                        src="/img/Pantaras-profile.jpeg"
+                        src={profileImg}
                         alt="Developer Profile"
                         className="rounded-2xl shadow-xl object-cover w-full h-[400px] md:h-[500px] object-[center_60%]"
                       />
@@ -220,7 +222,7 @@ const Home: React.FC = () => {
                   <div className="group bg-[#1A1A1A] rounded-xl overflow-hidden hover:bg-yellow-400/5 transition-all duration-300">
                     <div className="relative aspect-video overflow-hidden">
                       <img 
-                        src="project1.jpg" 
+                        src={projectImg} 
                         alt="Project 1"
                         className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300"
                       />
@@ -241,7 +243,7 @@ const Home: React.FC = () => {
                   <div className="group bg-[#1A1A1A] rounded-xl overflow-hidden hover:bg-yellow-400/5 transition-all duration-300">
                     <div className="relative aspect-video overflow-hidden">
                       <img 
-                        src="project2.jpg" 
+                        src={projectImg} 
                         alt="Project 2"
                         className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300"
                       />
@@ -262,7 +264,7 @@ const Home: React.FC = () => {
                   <div className="group bg-[#1A1A1A] rounded-xl overflow-hidden hover:bg-yellow-400/5 transition-all duration-300">
                     <div className="relative aspect-video overflow-hidden">
                       <img 
-                        src="project3.jpg" 
+                        src={projectImg} 
                         alt="Project 3"
                         className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300"
                       />
