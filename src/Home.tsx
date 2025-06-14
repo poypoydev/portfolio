@@ -133,18 +133,18 @@ const Home: React.FC = () => {
             style={{ transitionDelay: '500ms' }}
           >
             <div className="container mx-auto px-4 md:px-8 lg:px-12">
-              <h2 className="text-xl md:text-2xl font-bold text-white mb-16 md:mb-14 text-center transform transition-all duration-1000">
+              <h2 className="text-xl md:text-2xl font-bold text-white mb-16 md:mb-32 text-center transform transition-all duration-1000">
                 About Me
               </h2>
               <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-8 md:gap-16 max-w-7xl mx-auto">
                 {/* Left Column - Photo */}
-                <div className="w-full md:w-1/2 max-w-[400px] transform transition-all duration-1000 px-4 md:px-0 mb-12 md:mb-0">
-                  <Parallax translateY={[0, 15]} opacity={[0.8, 1]} speed={-3} className="md:block">
+                <div className="w-full md:w-1/2 max-w-[400px] transform transition-all duration-1000 px-4 md:px-0 mb-4 md:mb-0">
+                  <Parallax translateY={[0, -15]} opacity={[0.8, 1]} speed={-3} className="md:block">
                     <div className="relative rounded-2xl overflow-hidden">
                       <img 
                         src={profileImg}
                         alt="Developer Profile"
-                        className="rounded-2xl shadow-xl object-cover w-full h-[400px] md:h-[500px] object-[center_70%] md:object-[center_60%]"
+                        className="rounded-2xl shadow-xl object-cover w-full h-[440px] md:h-[500px] object-[center_70%] md:object-[center_60%]"
                       />
                     </div>
                   </Parallax>
@@ -194,8 +194,8 @@ const Home: React.FC = () => {
                     <div className="space-y-6">
                       {/* Tech Stack and Tools */}
                       <div className="mt-8">
-                        <h4 className="text-yellow-400 font-medium mb-4 text-center md:text-left">Tech Stack & Tools</h4>
-                        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2 md:gap-4">
+                        <h4 className="text-yellow-400 font-medium mb-8 text-center md:text-left">Tech Stack & Tools</h4>
+                        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-2 md:gap-4">
                           {/* Development Tools */}
                           <div className="group flex flex-col items-center justify-center p-3 rounded-lg hover:bg-yellow-400/5 transition-all duration-300">
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" className="w-8 h-8 mb-2" alt="React" />
