@@ -18,23 +18,28 @@ const Navbar: React.FC = () => {
         return;
       }
 
-      // Regular section detection
+      // Find the section whose midpoint is closest to the center of the viewport
+      let closestSection = sections[0];
+      let minDistance = Infinity;
+      const viewportCenter = viewportHeight / 2;
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Make the detection zone larger for shorter sections
-          const detectionThreshold = rect.height < viewportHeight ? rect.height / 2 : viewportHeight / 3;
-          
-          if (rect.top <= detectionThreshold && rect.bottom >= 0) {
-            setActiveSection(section);
-            break;
+          const sectionMid = rect.top + rect.height / 2;
+          const distance = Math.abs(sectionMid - viewportCenter);
+          if (distance < minDistance && rect.bottom > 0 && rect.top < viewportHeight) {
+            minDistance = distance;
+            closestSection = section;
           }
         }
       }
+      setActiveSection(closestSection);
     };
 
     window.addEventListener("scroll", handleScroll);
+    // Also call on mount in case user lands mid-page
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

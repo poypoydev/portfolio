@@ -262,8 +262,11 @@ const Home: React.FC = () => {
             style={{ transitionDelay: '400ms' }}
           >
             <div className="container mx-auto px-0 md:px-2 lg:px-4">
+              <Parallax translateY={[15, -15]} opacity={[0.8, 1]} speed={-3}>
               <h2 className="text-3xl font-bold text-white mb-16 text-center">Projects</h2>
+              </Parallax>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <Parallax translateX={[15, -20]} opacity={[0.8, 1]} speed={-3}>
                 {/* Project cards with regular transitions */}
                 <div className="transform transition-all duration-1000 h-full" style={{ transitionDelay: '500ms' }}>
                   {/* Project Card 1 */}
@@ -294,6 +297,8 @@ const Home: React.FC = () => {
                     </div>
                   </a>
                 </div>
+                </Parallax>
+                <Parallax translateX={[15, -20]} opacity={[0.8, 1]} speed={-3}>
                 <div className="transform transition-all duration-1000 h-full" style={{ transitionDelay: '600ms' }}>
                   {/* Project Card 2 */}
                   <a 
@@ -323,6 +328,8 @@ const Home: React.FC = () => {
                     </div>
                   </a>
                 </div>
+                </Parallax>
+                <Parallax translateX={[15, -20]} opacity={[0.8, 1]} speed={-3}>
                 <div className="transform transition-all duration-1000 h-full" style={{ transitionDelay: '700ms' }}>
                   {/* Project Card 3 */}
                   <a 
@@ -351,6 +358,7 @@ const Home: React.FC = () => {
                     </div>
                   </a>
                 </div>
+                </Parallax>
               </div>
             </div>
           </section>
@@ -374,7 +382,7 @@ const Home: React.FC = () => {
                       href="https://tinyurl.com/3pevma9y"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-4xl text-yellow-400 italic hover:text-yellow-500 transition-colors duration-300 wave-text inline-flex justify-center"
+                      className="text-4xl text-yellow-300 italic hover:text-yellow-500 transition-colors duration-300 wave-text inline-flex justify-center"
                     >
                       {"yirmeyahu@dev.tech".split('').map((letter, index) => (
                         <span key={index} className="wave-letter">
